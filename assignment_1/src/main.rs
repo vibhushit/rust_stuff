@@ -67,9 +67,51 @@ fn tempConversion(){
 
 fn fibonacci() {
     println!("Welcome to Fibonacci nubers!");
+    println!("Enter a number from 1 to 100 ");
+    let mut num = String::new();
+    io::stdin().read_line(&mut num)
+        .expect("Failed to read line");
+
+    let num :u8 = num.trim().parse()
+        .expect("Failed to parse number");
+    
+    let mut  a = 0;
+    let mut b = 1;
+    let mut c = 1;
+
+    let mut i = 1;
+    while i < num {
+        c = a + b;
+        a = b;
+        b = c;
+        i = i+1;
+    }
+    println!("{}th fib number is : {}", num, c);
+
 }
 
 fn christmasCarol() {
     println!("Welcome to Christmas carol");
+
+    let a = ["first","second", "third", "fourth", "fifth", "sixth", "seventh", "eighth", "ninth", "tenth", "eleventh", "twelfth"];
+    
+    let gifts = ["A partridge in a pear tree.", "Two turtle doves", "Three French hens", "Four calling birds", "Five gold rings", "Six geese a-laying", "Seven swans a-swimming", "Eight maids a-milking", "Nine ladies dancing", "Ten lords a-leaping", "Eleven pipers piping", "Twelve drummers drumming"];
+
+    let mut song = String::new();
+
+    for i in 0..a.len() {
+        
+        println!("On the {} day of Christmas, my true love sent to me", a[i]);
+        
+        if i == 0 {
+            song = "A partridge in a pear tree.".to_string();
+            println!("{}",song);
+            song = "And a partiride in a pear tree.".to_string();
+        }else {
+            song = format!("{}, \n{}", gifts[i], song);
+            println!("{}",song);
+        }
+        println!("\n");
+    }
 
 }
