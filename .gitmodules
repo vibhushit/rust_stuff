@@ -1,0 +1,9 @@
+[submodule "guessing_game"]
+	path = guessing_game
+	url = ./guessing_game
+[submodule "hello_cargo"]
+	path = hello_cargo
+	url = ./hello_cargo/
+[submodule "variables"]
+	path = variables
+	url = ./variables
