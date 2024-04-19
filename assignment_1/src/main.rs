@@ -29,6 +29,40 @@ fn main() {
 
 fn tempConversion(){
     println!("Welcome to Temperature Conversion!");
+    println!("Press 1 -> Celcius to Fahrenheit Converter");
+    println!("Press 2 -> Fahrenheit to Celcius Converter");
+
+    let mut option = String::new();
+    io::stdin().read_line(&mut option)
+        .expect("Failed to read line");
+    let option : u8 = option.trim().parse()
+        .expect("Failed to parse");
+
+    if option == 1 {
+        println!("Please enter temp in celcius");
+        let mut cel = String::new();
+        io::stdin().read_line(&mut cel)
+            .expect("Failed to read line");
+
+        let cel : f32 = cel.trim().parse()
+            .expect("Failed to parse");
+
+        let far = (cel * (9.0/5.0) ) + 32.0 ;
+
+        println!("Temperature in Fahrenheit is : {}", far);
+    }else{
+        println!("Please enter temp in Fahrenheit");
+        let mut f = String::new();
+        io::stdin().read_line(&mut f)
+            .expect("Failed to read line");
+
+        let f : f32 = f.trim().parse()
+            .expect("Failed to parse");
+
+        let c : f32 = ( f - 32.0) * (5.0/9.0);
+
+        println!("Temperature in Celcius is : {}", c);
+    }
 }
 
 fn fibonacci() {
